@@ -48,7 +48,7 @@ try {
       }
 
       const options = {
-        key: 'rzp_test_dummykey123', // Student dummy fallback
+        key: 'rzp_test_TOQBi73kBNDUddk', // Student dummy fallback
         amount: orderData.amount,
         currency: orderData.currency,
         name: 'ShopNest',
