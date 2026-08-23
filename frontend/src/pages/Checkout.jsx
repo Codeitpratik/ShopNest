@@ -23,7 +23,19 @@ const Checkout = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: totalPrice })
       });
-      const orderData = await orderRes.json();
+      const responseText = await orderRes.text();
+
+console.log("Payment status:", orderRes.status);
+console.log("Payment response:", responseText);
+
+let orderData = {};
+
+try {
+  orderData = responseText ? JSON.parse(responseText) : {};
+} catch (error) {
+  console.error("Invalid payment response:", responseText);
+}
+
 
       if (!orderRes.ok) {
         // Razorpay unconfigured exception handler
