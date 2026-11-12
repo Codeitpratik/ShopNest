@@ -21,6 +21,9 @@ app.use(cors({
 
 app.use(express.json());
 
+// Health check (used by UptimeRobot to keep the server awake)
+app.get('/api/health', (req, res) => res.json({ ok: true }));
+
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/products', require('./routes/productRoutes'));
 app.use('/api/orders', require('./routes/orderRoutes'));
