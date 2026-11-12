@@ -8,7 +8,7 @@ const AdminProducts = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch('/api/products');
+      const res = await fetch('https://shopnest-xjik.onrender.com/api/products');
       const data = await res.json();
       setProducts(Array.isArray(data) ? data : []);
     };
@@ -17,7 +17,7 @@ const AdminProducts = () => {
 
   const handleDelete = async (id) => {
     if (window.confirm('Are you strictly sure you want to delete this?')) {
-      const res = await fetch(`/api/products/${id}`, {
+      const res = await fetch(`https://shopnest-xjik.onrender.com/api/products/${id}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${user.token}` }
       });

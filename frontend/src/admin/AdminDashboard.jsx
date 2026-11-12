@@ -23,7 +23,7 @@ const AdminDashboard = () => {
       const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
       try {
-        const res = await fetch('/api/analytics', {
+        const res = await fetch('https://shopnest-xjik.onrender.com/api/analytics', {
           headers: { Authorization: `Bearer ${user.token}` },
           signal: controller.signal
         });
